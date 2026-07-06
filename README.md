@@ -98,7 +98,6 @@ khi kết nối thành công thì màn hình sẽ hiện ra.
 
 ## 4. Kiểm thử 
 
-Dự án đã được tích hợp các bài kiểm thử tự động cho các thành phần cốt lõi. Việc kiểm thử được chia thành nhiều lớp, đảm bảo logic nghiệp vụ và luồng giao tiếp API hoạt động chính xác.
 
 ### Công nghệ sử dụng:
 * **JUnit 5:** Framework tiêu chuẩn để viết và định hình các kịch bản kiểm thử trong Java.
