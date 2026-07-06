@@ -46,14 +46,6 @@ Backend được xây dựng dựa trên framework **Spring Boot**, tuân thủ 
 3. **Database Seeding (Khởi tạo dữ liệu mẫu):**
    * Sử dụng `CommandLineRunner` để tự động kiểm tra và chèn các dữ liệu mẫu (Ăn, uống, ngủ, nghỉ...) vào database ở lần chạy đầu tiên, giúp tiết kiệm thời gian test.
 
-### Cấu trúc thư mục Backend (ToDOListCRUD):
-
-/src/main/java/com/example/ToDoListCRUD
- ├── /controller      # Nhận Request từ web, gọi Service và trả về JSON (TaskController.java)
- ├── /service         # Chứa toàn bộ logic (TaskService.java)
- ├── /repository      # Cung cấp các hàm giao tiếp với Database (TaskRepository.java)
- ├── /model           # Định nghĩa cấu trúc bảng trong Database (Task.java)
- └── DataInitializer.java # Script tự động khởi tạo dữ liệu mẫu khi chạy server
 ### Luồng xử lý 
 
 Hệ thống phân tách trách nhiệm rõ ràng (Separation of Concerns). Dưới đây là luồng đi của dữ liệu và cách hệ thống xử lý các phản hồi HTTP:
