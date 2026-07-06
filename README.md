@@ -92,7 +92,9 @@ Mở Visual code và tải về các extendsion cần thiết như html hay js
 #### Bước 2: Chạy
 Ở đường dẫn ToDoListCRUD/src/main/java/com/example/todolistcrud/ToDoListCrudApplication.java trong Intellij nhấn **Run**
 Ở Visual code nhấn go live ở góc dưới bên phải màn hình
+
 <img width="323" height="185" alt="image" src="https://github.com/user-attachments/assets/a1d20335-50d8-40d7-b121-3b49626e6be0" />
+
 khi kết nối thành công thì màn hình sẽ hiện ra. 
 <img width="821" height="810" alt="image" src="https://github.com/user-attachments/assets/17208ddf-27cb-40f2-8d52-dc906f45e864" />
 ## Cách hoạt động 
