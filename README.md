@@ -104,4 +104,27 @@ khi kết nối thành công thì màn hình sẽ hiện ra.
 * Sửa và xóa ỏ uô 1 bên công việc
 * khi đã hoàn thành thì nhấn vào chính giữa công việc và công việc sẽ bị làm mờ và gạch ngang
 
+## 4. Kiểm thử 
+
+Dự án đã được tích hợp các bài kiểm thử tự động cho các thành phần cốt lõi. Việc kiểm thử được chia thành nhiều lớp, đảm bảo logic nghiệp vụ và luồng giao tiếp API hoạt động chính xác.
+
+### Công nghệ sử dụng:
+* **JUnit 5:** Framework tiêu chuẩn để viết và định hình các kịch bản kiểm thử trong Java.
+* **Mockito:** Thư viện hỗ trợ tạo các "đối tượng giả" (Mock Object), giúp cô lập các tầng mã nguồn khi test.
+* **MockMvc:** Công cụ của Spring Test giúp giả lập các HTTP Request (GET, POST...) để kiểm thử tầng Controller mà không cần phải chạy toàn bộ Server.
+
+### Phạm vi kiểm thử:
+
+**1. Kiểm thử tầng Logic nghiệp vụ (Service Layer):**
+* Sử dụng Mockito để làm giả `TaskRepository`, giúp cô lập `TaskService` khỏi tầng Database.
+* **Happy Path:** Xác nhận hàm thêm công việc hoạt động thành công, tự động chuẩn hóa dữ liệu và gọi đúng lệnh lưu trữ.
+* **Exception Path:** Đảm bảo hệ thống ném ra đúng lỗi `IllegalArgumentException` khi phát hiện dữ liệu trùng lặp (không phân biệt hoa/thường), và chặn lệnh `save()` vào Database.
+
+**2. Kiểm thử tầng Giao tiếp (API / Controller Layer):**
+* Sử dụng `@WebMvcTest` kết hợp `@MockBean` để chỉ nạp các thành phần liên quan đến Web và làm giả kết quả từ `TaskService`.
+* **Giả lập Request:** Bắn các luồng gọi API ảo vào endpoint `/api/tasks`.
+* **Xác minh Response:** Đảm bảo Controller phản hồi đúng định dạng (`application/json`), đúng mã trạng thái HTTP (ví dụ: `200 OK`) và cấu trúc chuỗi JSON trả về hoàn toàn khớp với kỳ vọng (sử dụng `jsonPath`).
+
+
+
 
